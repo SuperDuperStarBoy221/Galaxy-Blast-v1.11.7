@@ -18,13 +18,13 @@
     }
     #game{
         width: 600px;
-        height: 500px;
+        height: 450px;
         margin: auto;
         box-sizing: border-box;
         background-image: url("https://www.ohsat.com/tutorial/megalaga/megalaga-1/images/scrolling.gif");
         border: 9px solid purple;
         position: relative;
-        top: -50px;
+        top: -59px;
     }
     #start, #game-over {
         width: 1080px;
@@ -42,7 +42,7 @@
         width: 100px;
         height: 100px;
         position: relative;
-        top: 380px;
+        top: 340px;
         left: 300px;
         border-radius: 20px;
        
@@ -106,7 +106,7 @@
         font-family: "Press Start 2P", "consolas";
         display: none ;
         position: relative;
-          top: -50px;
+          top: -61px;
     }
     #tutorial{
         width: 1080px;
@@ -170,7 +170,7 @@
         width: 660px;
         height: 61.5px;
         position: relative;
-        top: -450px;
+        top: -440px;
         left: 0px;
     }
     #company{
@@ -224,7 +224,7 @@
     
 </head>
 <body> 
-     <h5>Version_1.11.9</h5>
+     <h5>Version_1.12.4</h5>
     <br  />
     <br  />
     
@@ -232,7 +232,7 @@
 <div id="start" style="display:block;">
     <br  />       
     <h2>Galaxy Blast</h2>
-    <h6>!Github Edition!</h6>     
+    <h6>!Sololearn Edition!</h6>     
     <br  />       
     <br  />       
     <a href="#" onclick="startGame()"><button>Play Game</button></a>
@@ -261,12 +261,12 @@
             random[1]='Better Luck Next Time!'; 
             random[2]='Almost there, you got it!';
             random[3]='Try Again, almost there!';
+            random[3]='Do not let Asher laugh at you!';
             var id=Math.round(Math.random()*(random.length-1)); document.write(random[id]);</script>
             <br  />
             <br  />
         </div>
             <h3><p>Score: <span id="score">0</span></p></h3>
-    <br  />
     <br  />
     <button onclick="restartGame()">Restart</button>
     <br  />
@@ -302,9 +302,6 @@ myAudio.play();
         let gameDiv =document.getElementById("start");
         game.style.display = "block";
        start.style.display= "none";
-       about.style.display = "none";
-       information.style.display = "none";
-       info.style.display = "none";
 }
 
      //Tutorial section
@@ -314,8 +311,6 @@ myAudio.play();
         game.style.display = "none";
        start.style.display= "none";
        tutorial.style.display = "block"
-       info.style.display = "none";
-       information.style.display = "none"
     }
     
     //quit section
@@ -326,9 +321,6 @@ myAudio.play();
        start.style.display = "block";
        result.style.display = "none"
        tutorial.style.display = "none";
-       info.style.display = "none";
-       information.style.display = "none"
-       
     }
 // result section
 var result = document.getElementById("result");
@@ -414,6 +406,7 @@ function restartGame() {
             game.style.display = 'none';
              block.style.animation = "linear";
              subtractScore();
+             isGameOver = true; // Game over
             }
         }, 0);
         
@@ -435,6 +428,7 @@ function restartGame() {
             game.style.display = 'none';
              meteor.style.animation = "linear";
              subtractScore();
+             isGameOver = true; // Game over
             }
         }, 0);
         
@@ -457,6 +451,7 @@ function restartGame() {
             game.style.display = 'none';
             monster.style.animation = "linear";
             subtractScore();
+            isGameOver = true; // Game over
         }
     }, 0);
     
@@ -484,6 +479,9 @@ function restartGame() {
         block.style.animation = "slide 0.8s infinite linear";
         meteor.style.animation = "meteor 0.8s infinite linear";
         monster.style.animation = "monster 1.3s infinite linear"
+        score = 0;
+        document.getElementById("score").textContent = score;
+        isGameOver = false;  // Reset isGameOver when restarting the game
       }
     </script>
     </html>
