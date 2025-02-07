@@ -217,6 +217,18 @@
     span{
         color: white;
     }
+
+    .rotated-text {
+        display: inline-block;
+        transform: rotate(-35deg);
+        color: yellow;
+        background-color: transparent;
+        position: relative;
+        left: 23%;
+        top:-5%
+        
+    }
+
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -224,14 +236,16 @@
     
 </head>
 <body> 
-     <h5>Version_1.12.4</h5>
+     <h5>Version_1.12.6</h5>
     <br  />
     <br  />
     
     <br />
 <div id="start" style="display:block;">
     <br  />       
-    <h6>!Github Edition!</h6>     
+    <h2>Galaxy Blast</h2>
+    <h6>!Github Edition!</h6>
+    <p class="rotated-text">Perfect School Game!</p>  
     <br  />       
     <br  />       
     <a href="#" onclick="startGame()"><button>Play Game</button></a>
@@ -256,11 +270,13 @@
            <h1>GAME OVER</h1>
            <br  />
            <div id="random"><script>var random=new Array(); 
-            random[0]='Nice try, you can do it!'; 
-            random[1]='Better Luck Next Time!'; 
-            random[2]='Almost there, you got it!';
-            random[3]='Try Again, almost there!';
-            random[3]='Do not let Asher laugh at you!';
+            random[0]="Nice try, you can do it!"; 
+            random[1]="Better Luck Next Time!"; 
+            random[2]="Almost there, you got it!";
+            random[3]="Try Again, almost there!";
+            random[3]="Do not let Asher laugh at you!";
+            random[4]="You can do this! You're so close!";
+            random[5]="Never Give up! Never Back";
             var id=Math.round(Math.random()*(random.length-1)); document.write(random[id]);</script>
             <br  />
             <br  />
